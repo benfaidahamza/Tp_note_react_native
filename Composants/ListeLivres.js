@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { CATEGORIES, LIVRES } from '../models/data';
@@ -67,7 +67,8 @@ const ListeLivres = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.filterContainer}>
+    <View style={styles.filterContainer}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <TouchableOpacity
           style={[styles.filterButton, selectedCategory === null && styles.activeFilterButton]}
           onPress={() => setSelectedCategory(null)}
@@ -96,8 +97,8 @@ const ListeLivres = () => {
             </Text>
           </TouchableOpacity>
         ))}
+      </ScrollView>
       </View>
-
       <FlatList
         data={LIVRES}
         renderItem={renderLivre}
@@ -164,6 +165,7 @@ const styles = StyleSheet.create({
   filterContainer: {
     flexDirection: 'row',
     marginBottom: 10,
+    marginLeft:13
   },
   filterButton: {
     paddingHorizontal: 10,

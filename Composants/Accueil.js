@@ -12,7 +12,7 @@ const Accueil = () => {
         style={styles.image}
       />
       <Text style={[styles.title, { color: colors.text }]}>Bienvenue sur notre application !</Text>
-      <Text style={[styles.subtitle, { color: colors.text }]}>Découvrez notre sélection de livres.</Text>
+      <Text style={[styles.subtitle, { color: colors.text }]}>La simplicité fait la beauté.</Text>
     </View>
   );
 };
